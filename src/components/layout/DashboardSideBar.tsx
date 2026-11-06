@@ -71,10 +71,10 @@ export default function DashboardSidebar(){
     const pathname = usePathname();
 
     return(
-        <aside className="flex h-screen w-72 shrink-0 flex-col border-l border-white/10 bg-[#111315] text-white">
+        <aside className="flex h-screen w-72 shrink-0 flex-col border-l border-border bg-card text-muted-foreground">
             {/* logo */}
-            <div className="flex h-20 items-center gap-3 border-b border-white/10 px-6">
-                <div className="flex size-11 items-center justify-center rounded-xl bg-orange-500 text-xl fill-black text-white">
+            <div className="flex h-20 items-center gap-3 border-b border-border px-6">
+                <div className="flex size-11 items-center justify-center rounded-xl bg-orange-500 text-xl font-black text-muted-foreground">
                     N
                 </div>
                 <div>
@@ -99,7 +99,7 @@ export default function DashboardSidebar(){
                                 const Icon = item.icon;
                                 return(
                                     <Link href={item.href} key={item.href}
-                                    className={`group flex items-center gap-3 rounded-xl px-3 py-3 text-sm transition-all ${isActive ? "bg-orange-500 font-semibold text-white shadow-lg shadow-orange-500/10":"text-gray-400 hover:bg-white/5 hover:text-white"} `}>
+                                    className={`group flex items-center gap-3 rounded-xl px-3 py-3 text-sm transition-all ${isActive ? "bg-orange-500 font-semibold text-white shadow-lg shadow-orange-500/10":"text-muted-foreground hover:bg-white/5 hover:hover:text-muted-foreground"} `}>
                                     <Icon size={19}/>
                                     <span>{item.title}</span>
                                     </Link>
@@ -112,11 +112,11 @@ export default function DashboardSidebar(){
 
             {/* Button Section */}
             <div className="space-y-2 border-t border-white/50 p-4">
-            <Link href={'/dashboard/users'} className="flex items-center gap-3 rounded-xl px-3 py-3 text-sm text-gray-400 transition hover:bg-white/5 hover:text-white">
+            <Link href={'/dashboard/users'} className="flex items-center gap-3 rounded-xl px-3 py-3 text-sm text-muted-foreground transition hover:bg-white/5 hover:hover:text-muted-foreground">
             <ShieldCheck size={19}/>
             مدیریت کاربران
             </Link>
-            <button className="flex w-full items-center gap-3 rounded-xl px-3 py-3 text-sm text-gray-400 transition cursor-pointer hover:bg-white/5 hover:text-white">
+            <button className="flex w-full items-center gap-3 rounded-xl px-3 py-3 text-sm text-muted-foreground transition cursor-pointer hover:bg-white/5 hover:text-muted-foreground">
                 <LogOut size={19}/>
                 خروج از حساب
             </button>
