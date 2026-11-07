@@ -81,7 +81,7 @@ export default function DashboardSidebar(){
                     <h1 className="text-xl font-black tracking-wider">
                         NOVA <span className="text-orange-500">SPORT</span>
                     </h1>
-                    <p className="mt-0.5 text-[13px] text-gray-500">
+                    <p className="mt-0.5 text-[13px] text-muted-foreground">
                         سیستم مدیریت باشگاه
                     </p>
                 </div>
@@ -99,7 +99,7 @@ export default function DashboardSidebar(){
                                 const Icon = item.icon;
                                 return(
                                     <Link href={item.href} key={item.href}
-                                    className={`group flex items-center gap-3 rounded-xl px-3 py-3 text-sm transition-all ${isActive ? "bg-orange-500 font-semibold text-white shadow-lg shadow-orange-500/10":"text-muted-foreground hover:bg-white/5 hover:hover:text-muted-foreground"} `}>
+                                    className={`group flex items-center gap-3 rounded-xl px-3 py-3 text-sm transition-all ${isActive ? "bg-orange-500/30 font-semibold text-muted-foreground shadow-lg shadow-orange-500/10":"text-muted-foreground hover:bg-accent hover:hover:text-muted-foreground"} `}>
                                     <Icon size={19}/>
                                     <span>{item.title}</span>
                                     </Link>
@@ -111,12 +111,12 @@ export default function DashboardSidebar(){
             </nav>
 
             {/* Button Section */}
-            <div className="space-y-2 border-t border-white/50 p-4">
-            <Link href={'/dashboard/users'} className="flex items-center gap-3 rounded-xl px-3 py-3 text-sm text-muted-foreground transition hover:bg-white/5 hover:hover:text-muted-foreground">
+            <div className="space-y-2 border-t border-border p-4">
+            <Link href={'/dashboard/users'} className="flex items-center gap-3 rounded-xl px-3 py-3 text-sm text-muted-foreground transition hover:bg-accent hover:hover:text-muted-foreground">
             <ShieldCheck size={19}/>
             مدیریت کاربران
             </Link>
-            <button className="flex w-full items-center gap-3 rounded-xl px-3 py-3 text-sm text-muted-foreground transition cursor-pointer hover:bg-white/5 hover:text-muted-foreground">
+            <button className="flex w-full items-center gap-3 rounded-xl px-3 py-3 text-sm text-muted-foreground transition cursor-pointer hover:bg-accent hover:text-muted-foreground">
                 <LogOut size={19}/>
                 خروج از حساب
             </button>
