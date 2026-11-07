@@ -1,13 +1,16 @@
 import { Bell, ChevronDown, Menu, Search } from "lucide-react"
 import ThemeToggle from "../shared/ThemeToggle"
 
+interface DashboardHeaderProps{
+    onMenuClick:()=>void;
+}
 
-function DashboardHeader() {
+function DashboardHeader({onMenuClick}:DashboardHeaderProps) {
   return (
     <header className="sticky top-0 z-30 flex h-20 items-center justify-between border-b border-border bg-background/80 px-4 backdrop-blur-xl md:px-8">
       {/* right section */}
       <div className="flex items-center gap-3">
-        <button className="flex size-10 items-center justify-center rounded-xl border border-border lg:hidden">
+        <button onClick={onMenuClick} className="flex size-10 items-center justify-center rounded-xl border border-border lg:hidden">
             <Menu size={19}/>
         </button>
         <div>
