@@ -12,6 +12,9 @@ import {
 
 import { athletes } from "@/data/athletes";
 import type { Athlete, AthleteStatus } from "@/types/athlete";
+import { Dialog, DialogContent, DialogDescription, DialogHeader } from "../ui/dialog";
+import { DialogTitle } from "radix-ui/dialog";
+import AthleteForm from "./AtheleForm";
 
 const statusConfig: Record<
   AthleteStatus,
@@ -34,6 +37,7 @@ const statusConfig: Record<
 export default function AthletesTable() {
   const [search, setSearch] = useState("");
   const [status, setStatus] = useState("ALL");
+  const[isCreateDialogOpen,setIsCreateDialogOpen]=useState(false);
 
   const filteredAthletes = useMemo(() => {
     return athletes.filter((athlete: Athlete) => {
@@ -64,6 +68,7 @@ export default function AthletesTable() {
 
         <button
           type="button"
+          onClick={()=>setIsCreateDialogOpen(true)}
           className="flex items-center justify-center gap-2 rounded-xl bg-orange-500 px-4 py-2.5 text-sm font-medium text-white transition-colors hover:bg-orange-600"
         >
           <Plus size={18} />
@@ -224,6 +229,21 @@ export default function AthletesTable() {
               )}
             </tbody>
           </table>
+          <Dialog
+          open={isCreateDialogOpen} onOpenChange={setIsCreateDialogOpen}>
+            <DialogContent className="max-h-[90vh] overflow-y-auto sm:max-w-3xl">
+                <DialogHeader>
+                  <DialogTitle className="mt-6">ثبت ورزشکار جدید</DialogTitle>
+                  <DialogDescription>
+                  اطلاعات ورزشکار را برای ثبت در باشگاه وارد کنید
+                </DialogDescription>
+                </DialogHeader>
+                
+                <AthleteForm/>
+
+            </DialogContent>
+
+          </Dialog>
         </div>
       </div>
     </div>
